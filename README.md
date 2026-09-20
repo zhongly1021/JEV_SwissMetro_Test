@@ -445,13 +445,7 @@ is the predicted distribution.
 
 The standard Jensen-Shannon divergence is calculated as:
 
-$$
-JSD(p,q)
-=
-\frac{1}{2} KL(p||m)
-+
-\frac{1}{2} KL(q||m)
-$$
+$$JSD(q, p)=\frac{1}{2} KL(p||m)+\frac{1}{2} KL(q||m)$$
 
 where:
 
@@ -559,9 +553,7 @@ The current experiment should be interpreted as a **zero-shot behavioral predict
 
 Traditional discrete choice models estimate parameters using observed choices, for example:
 
-$$
-P(i|x)
-=
+$$P(i|x) =
 \frac{\exp(V_i)}
 {\sum_j \exp(V_j)}
 $$
