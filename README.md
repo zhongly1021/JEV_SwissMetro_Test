@@ -434,35 +434,28 @@ JSD = 0.0716
 
 where:
 
-\[
-p =
-(0.1328,\ 0.5799,\ 0.2873)
-\]
+p = (0.1328, 0.5799, 0.2873)
 
 is the observed mode distribution and:
 
-\[
-q =
-(0.0177,\ 0.8982,\ 0.0841)
-\]
+
+q = (0.0177, 0.8982,0.0841)
 
 is the predicted distribution.
 
 The standard Jensen-Shannon divergence is calculated as:
 
-\[
+$$
 JSD(p,q)
 =
 \frac{1}{2} KL(p||m)
 +
 \frac{1}{2} KL(q||m)
-\]
+$$
 
 where:
 
-\[
-m=\frac{p+q}{2}.
-\]
+$$m=\frac{p+q}{2}.$$
 
 The evaluation code additionally implements the symmetric KL-style divergence equation reported in the referenced LLM-based mode-choice study:
 
@@ -566,12 +559,12 @@ The current experiment should be interpreted as a **zero-shot behavioral predict
 
 Traditional discrete choice models estimate parameters using observed choices, for example:
 
-\[
+$$
 P(i|x)
 =
 \frac{\exp(V_i)}
 {\sum_j \exp(V_j)}
-\]
+$$
 
 where the utility parameters are estimated by maximizing the likelihood of the observed dataset.
 
@@ -579,7 +572,7 @@ In the current experiment, JEV has not been trained or fine-tuned using the Swis
 
 Instead, it directly generates:
 
-\[
+$$
 P_{\text{JEV}}
 (
 Train,
@@ -588,7 +581,7 @@ Car
 \mid
 Traveler,\ Trip,\ Alternatives
 )
-\]
+$$
 
 using its pretrained decision model.
 
